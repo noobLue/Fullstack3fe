@@ -78,7 +78,6 @@ const App = () => {
   useEffect(() => {
     phonebook.getAll()
       .then(res => {
-        console.log(res);
         setPersons(res.data);
       });
   }, [])
