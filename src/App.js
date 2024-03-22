@@ -19,7 +19,7 @@ const App = () => {
           
     setTimeout(() => {
       setErrorMessage([])
-    }, 2000)
+    }, 4000)
   }
 
   const createPerson = (e) => {
@@ -39,7 +39,7 @@ const App = () => {
             setMessage(`Updated ${person.name}.`, false);
           })
           .catch((err)=>{
-            alert(`error: ${err}`)
+            setMessage(err.response.data.error, true)
           })
       }
     }
@@ -53,7 +53,7 @@ const App = () => {
           setMessage(`Added ${person.name}.`, false);
         })
         .catch((err)=>{
-          alert(`error: ${err}`)
+          setMessage(err.response.data.error, true)
         })
     }
   };
